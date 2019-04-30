@@ -6,6 +6,14 @@ import com.nasduck.lib.builder.impl.ToastBuilder;
 
 public class DuckToast {
 
+    public static void dismiss() {
+        ToastBuilder.dismiss();
+    }
+
+    public static void dismiss(long delay) {
+        ToastBuilder.dismiss(delay);
+    }
+
     public static void show(FragmentActivity activity, String text) {
         ToastBuilder.getInstance(activity)
                 .setText(text)
