@@ -52,7 +52,7 @@ public class ToastActivity extends AppCompatActivity {
     }
 
     public void onHideToastClick(View view) {
-        ToastBuilder.dismiss();
+        DuckToast.dismiss();
     }
 
     public void onToastCustomClick(View view) {
