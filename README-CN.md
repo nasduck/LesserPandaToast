@@ -13,7 +13,7 @@ allprojects {
 步骤二：添加依赖项
 ```
 dependencies {
-    implementation 
+    implementation 'com.github.nasduck:DuckAndroidToast:1.0.0'
 }
 ```
 
