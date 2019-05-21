@@ -13,6 +13,9 @@ public abstract class BaseToastBuilder implements IToastBuilder {
 
     protected static ToastHandler mHandler = new ToastHandler();
 
+    /**
+     * show toast
+     */
     public void show() {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         FragmentManager manager = getActivity().getSupportFragmentManager();
@@ -26,16 +29,26 @@ public abstract class BaseToastBuilder implements IToastBuilder {
         }
     }
 
+    /**
+     * toast dismiss immediately
+     */
     public static void dismiss() {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         mHandler.sendEmptyMessage(ToastHandler.MSG_HIDE);
     }
 
+    /**
+     * toast dismiss with delay
+     * @param delay
+     */
     public static void dismiss(long delay) {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         mHandler.sendEmptyMessageDelayed(ToastHandler.MSG_HIDE, delay);
     }
 
+    /**
+     * hide toast
+     */
     public void hide() {
         FragmentManager manager = getActivity().getSupportFragmentManager();
         Fragment frag = manager.findFragmentByTag(TOAST_TAG);

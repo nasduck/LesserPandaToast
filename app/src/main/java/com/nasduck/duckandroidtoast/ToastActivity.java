@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.nasduck.lib.DuckToast;
+import com.nasduck.lib.LesserPandaToast;
 import com.nasduck.lib.builder.impl.ToastBuilder;
 
 public class ToastActivity extends AppCompatActivity {
@@ -16,43 +16,43 @@ public class ToastActivity extends AppCompatActivity {
     }
 
     public void onDefaultClick(View view) {
-        DuckToast.show(this, "Toast Default");
+        LesserPandaToast.show(this, "Toast Default");
     }
 
     public void onSuccessClick(View view) {
-        DuckToast.showSuccess(this);
+        LesserPandaToast.showSuccess(this);
     }
 
     public void onFailureClick(View view) {
-        DuckToast.showFailure(this);
+        LesserPandaToast.showFailure(this);
     }
 
     public void onWarningClick(View view) {
-        DuckToast.showWarning(this);
+        LesserPandaToast.showWarning(this);
     }
 
     public void onLoadingClick(View view) {
-        DuckToast.showLoading(this);
+        LesserPandaToast.showLoading(this);
     }
 
     public void onSuccessTextClick(View view) {
-        DuckToast.showSuccess(this, "success");
+        LesserPandaToast.showSuccess(this, "success");
     }
 
     public void onFailureTextClick(View view) {
-        DuckToast.showFailure(this, "failure");
+        LesserPandaToast.showFailure(this, "failure");
     }
 
     public void onWarningTextClick(View view) {
-        DuckToast.showWarning(this, "warning");
+        LesserPandaToast.showWarning(this, "warning");
     }
 
     public void onLoadingTextClick(View view) {
-        DuckToast.showLoading(this, "loading");
+        LesserPandaToast.showLoading(this, "loading");
     }
 
     public void onHideToastClick(View view) {
-        DuckToast.dismiss();
+        LesserPandaToast.dismiss();
     }
 
     public void onToastCustomClick(View view) {

@@ -4,7 +4,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.nasduck.lib.builder.impl.ToastBuilder;
 
-public class DuckToast {
+public class LesserPandaToast {
 
     public static void dismiss() {
         ToastBuilder.dismiss();
