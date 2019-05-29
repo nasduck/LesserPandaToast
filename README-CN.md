@@ -61,7 +61,7 @@ DuckToast.showLoading(this);                // 只有图标，不含文字
 DuckToast.showLoading(this, "loading");     // 包含图标和文字
 ```
 
-<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20text%20toast.gif?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/default%20toast.png?raw=true" height="300" > 
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
 
 > 在用户调用 showXXXX 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
 
@@ -87,8 +87,13 @@ ToastBuilder.getInstance(this)
         .setAnimation(Integer animation)                    // 设置图片的动画
         .setBgColor(Integer bgColor)                        // 设置背景颜色
         .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
+	.setPaddingTop(Integer paddingTop)		    // 设置顶部padding
+	.setPaddingBottom(Integer paddingBottom)	    // 设置底部padding
+	.setPaddingLeft(Integer paddingLeft)		    // 设置左边padding
+	.setPaddingRight(Integer paddingRight)		    // 设置右边padding
         .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
         .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
+	.setPadding(Integer padding)			    // 设置padding
         .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
         .setTextColor(Integer textColor)                    // 设置文字颜色
         .setTextSize(Integer textSize)                      // 设置文字大小
