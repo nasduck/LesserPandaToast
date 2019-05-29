@@ -16,7 +16,7 @@ public class ToastActivity extends AppCompatActivity {
     }
 
     public void onDefaultClick(View view) {
-        LesserPandaToast.show(this, "Toast Default");
+        LesserPandaToast.show(this, String.valueOf(getResources().getText(R.string.default_toast)));
     }
 
     public void onSuccessClick(View view) {
@@ -36,19 +36,19 @@ public class ToastActivity extends AppCompatActivity {
     }
 
     public void onSuccessTextClick(View view) {
-        LesserPandaToast.showSuccess(this, "success");
+        LesserPandaToast.showSuccess(this, String.valueOf(getResources().getText(R.string.success)));
     }
 
     public void onFailureTextClick(View view) {
-        LesserPandaToast.showFailure(this, "failure");
+        LesserPandaToast.showFailure(this, String.valueOf(getResources().getText(R.string.failure)));
     }
 
     public void onWarningTextClick(View view) {
-        LesserPandaToast.showWarning(this, "warning");
+        LesserPandaToast.showWarning(this, String.valueOf(getResources().getText(R.string.warning)));
     }
 
     public void onLoadingTextClick(View view) {
-        LesserPandaToast.showLoading(this, "loading");
+        LesserPandaToast.showLoading(this, String.valueOf(getResources().getText(R.string.loading)));
     }
 
     public void onHideToastClick(View view) {
