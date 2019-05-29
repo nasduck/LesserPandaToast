@@ -1,8 +1,9 @@
-package com.nasduck.lib;
+package com.zoopark.toast;
 
 import android.support.v4.app.FragmentActivity;
 
-import com.nasduck.lib.builder.impl.ToastBuilder;
+import com.nasduck.lib.R;
+import com.zoopark.toast.builder.impl.ToastBuilder;
 
 public class LesserPandaToast {
 

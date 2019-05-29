@@ -1,9 +1,9 @@
-package com.nasduck.lib.handler;
+package com.zoopark.toast.handler;
 
 import android.os.Handler;
 import android.os.Message;
 
-import com.nasduck.lib.builder.IToastBuilder;
+import com.zoopark.toast.builder.IToastBuilder;
 
 import java.lang.ref.WeakReference;
 

@@ -1,4 +1,4 @@
-package com.nasduck.lib.utils;
+package com.zoopark.toast.utils;
 
 import android.content.Context;
 

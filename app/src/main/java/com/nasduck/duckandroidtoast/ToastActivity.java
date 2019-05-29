@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.nasduck.lib.LesserPandaToast;
-import com.nasduck.lib.builder.impl.ToastBuilder;
+import com.zoopark.toast.LesserPandaToast;
+import com.zoopark.toast.builder.impl.ToastBuilder;
 
 public class ToastActivity extends AppCompatActivity {
 

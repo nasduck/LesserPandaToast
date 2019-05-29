@@ -1,9 +1,9 @@
-package com.nasduck.lib.builder.impl;
+package com.zoopark.toast.builder.impl;
 
 import android.support.v4.app.FragmentActivity;
 
-import com.nasduck.lib.builder.BaseToastBuilder;
-import com.nasduck.lib.config.ToastConfig;
+import com.zoopark.toast.builder.BaseToastBuilder;
+import com.zoopark.toast.config.ToastConfig;
 
 
 public class ToastBuilder extends BaseToastBuilder {

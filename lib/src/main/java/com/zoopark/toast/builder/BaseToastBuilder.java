@@ -1,11 +1,11 @@
-package com.nasduck.lib.builder;
+package com.zoopark.toast.builder;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.nasduck.lib.handler.ToastHandler;
-import com.nasduck.lib.toast.impl.Toast;
+import com.zoopark.toast.handler.ToastHandler;
+import com.zoopark.toast.toast.impl.Toast;
 
 public abstract class BaseToastBuilder implements IToastBuilder {
 

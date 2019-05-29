@@ -1,4 +1,4 @@
-package com.nasduck.lib.toast.impl;
+package com.zoopark.toast.toast.impl;
 
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nasduck.lib.R;
-import com.nasduck.lib.config.ToastConfig;
-import com.nasduck.lib.toast.BaseToast;
-import com.nasduck.lib.utils.DensityUtils;
+import com.zoopark.toast.config.ToastConfig;
+import com.zoopark.toast.toast.BaseToast;
+import com.zoopark.toast.utils.DensityUtils;
 
 public class Toast extends BaseToast {
 

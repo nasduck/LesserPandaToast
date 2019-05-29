@@ -1,4 +1,4 @@
-package com.nasduck.lib.config;
+package com.zoopark.toast.config;
 
 import android.os.Parcel;
 import android.os.Parcelable;

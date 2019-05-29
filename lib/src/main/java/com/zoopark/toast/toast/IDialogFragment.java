@@ -1,4 +1,4 @@
-package com.nasduck.lib.toast;
+package com.zoopark.toast.toast;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
