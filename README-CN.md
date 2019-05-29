@@ -38,7 +38,7 @@ dependencies {
 4. 警告
 5. 正在加载
 
-### 调用文字Toast
+### 显示 Toast
 
 ```java
 // 纯文字
@@ -77,7 +77,7 @@ DuckToast.dismiss();                // 立即消失
 DuckToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫秒)
 ```
 
-### 自定义
+### 自定义 Toast
 
 自定义 Toast, 建议进行进一步封装简化调用:
 
