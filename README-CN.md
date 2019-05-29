@@ -1,7 +1,15 @@
-toast提供最简单的方法来调用各类简单的toast，同时提供了自定义方法来定义不同的toast样式。
+![banner](https://github.com/nasduck/LesserPandaToast/blob/develop/art/%E5%B0%8F%E7%86%8A%E7%8C%ABbanner.png?raw=true)
+
+[![API](https://img.shields.io/badge/LesserPandaToast-v1.0.1-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
+[![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
+[![API](https://img.shields.io/badge/License-Apche2.0-brightgreen.svg?style=flat)](https://github.com/nasduck/LesserPandaToast/blob/master/LICENSE)
+
+LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud 或 toast, 同时提供自定义方法来定义不同的样式. 用户可以手动控制消失或者自动延时消失. 如果你对 Dialog 感兴趣. 欢迎移步另外一个配套的开源项目 [GiantPandaToast](https://github.com/nasduck/GiantPandaDialog). 大熊猫和小熊猫总是搭配使用 :D
 
 ## 依赖
+
 步骤一：在项目的build.gradle中添加jitpack
+
 ```
 allprojects {
 	repositories {
@@ -10,62 +18,83 @@ allprojects {
 	}
 }
 ```
+
 步骤二：添加依赖项
+
+
 ```
 dependencies {
-    implementation 'com.github.nasduck:DuckAndroidToast:1.0.0'
+    implementation 'com.github.nasduck:LesserPandaToast:1.0.1'
 }
 ```
 
 ## 使用方式
-### 调用文字Toast
+
+默认提供了 5 种 Toast 类型:
+
+1. 纯文字
+2. 成功
+3. 失败
+4. 警告
+5. 正在加载
+
+### 显示 Toast
+
 ```java
+// 纯文字
 DuckToast.show(this, "Toast Default");
-```
-### 调用提示Toast
-#### Success
-```java
+
+// 成功
 DuckToast.showSuccess(this);                // 只有图标，不含文字
 DuckToast.showSuccess(this, "success");     // 包含图标和文字
-```
-#### Failure
-```java
+
+// 失败
 DuckToast.showFailure(this);                // 只有图标，不含文字
 DuckToast.showFailure(this, "failure");     // 包含图标和文字
-```
-#### Warning
-```java
+
+// 警告
 DuckToast.showWarning(this);                // 只有图标，不含文字
 DuckToast.showWarning(this, "warning");     // 包含图标和文字
-```
-#### Loading
-```java
+
+// 正在加载
 DuckToast.showLoading(this);                // 只有图标，不含文字
 DuckToast.showLoading(this, "loading");     // 包含图标和文字
 ```
 
-### 隐藏Toast
-toast有一个开关的控制，所有的toast调用显示都属于开的过程，而toast的隐藏需要调用方法：
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20text%20toast.gif?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/default%20toast.png?raw=true" height="300" > 
+
+> 在用户调用 showXXXX 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
+
+### 隐藏 Toast
+
+两种消失方式:
+
+1. 立即消失
+2. 延迟一段时间后消失
+
 ```java
-DuckToast.dismiss();                // 使toast立刻消失
-DuckToast.dismiss(long delay);      // 使toast在延迟delay的时间后消失
+DuckToast.dismiss();                // 立即消失
+DuckToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫秒)
 ```
 
-### 自定义Toast
-在创建自定义toast时，建议进行进一步封装方便调用
+### 自定义 Toast
+
+自定义 Toast, 建议进行进一步封装简化调用:
+
 ```java
 ToastBuilder.getInstance(this)
-        .setImage(Integer image)                            // 设置图片，如果未设置，则toast中的图片不显示，图片相关设置不生效
+        .setImage(Integer image)                            // 设置图片，如未设置, 则图片不显示，图片相关设置也不生效
         .setAnimation(Integer animation)                    // 设置图片的动画
-        .setBgColor(Integer bgColor)                        // 设置背景的颜色
-        .setCornerRadius(Integer cornerRadius)              // 设置背景的圆角
-        .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平的padding
-        .setPaddingVertical(Integer paddingVertical)        // 设置竖直的padding
-        .setText(String text)                               // 设置文字，如果未设置，则toast中的文字不显示，文字相关设置不生效
+        .setBgColor(Integer bgColor)                        // 设置背景颜色
+        .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
+        .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
+        .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
+        .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
         .setTextColor(Integer textColor)                    // 设置文字颜色
         .setTextSize(Integer textSize)                      // 设置文字大小
         .show();
-ToastBuilder.dismiss(1500);
+        
+ToastBuilder.dismiss(1500); // 1.5 秒后自动消失
 ```
 
 ## 贡献
