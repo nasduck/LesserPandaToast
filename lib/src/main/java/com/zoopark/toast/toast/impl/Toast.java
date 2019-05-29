@@ -83,7 +83,7 @@ public class Toast extends BaseToast {
 
         if (config.getImage() != null && !TextUtils.isEmpty(config.getText())) {
             ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mTvTitle.getLayoutParams();
-            lp.topMargin = DensityUtils.dp2px(getContext(), 6);
+            lp.topMargin = DensityUtils.dp2px(getContext(), 16);
             mTvTitle.setLayoutParams(lp);
         } else {
             ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mTvTitle.getLayoutParams();
@@ -97,10 +97,10 @@ public class Toast extends BaseToast {
         }
 
         // Padding
-        mLayoutContainer.setPadding(DensityUtils.dp2px(mContext, config.getPaddingHorizontal()),
-                DensityUtils.dp2px(mContext, config.getPaddingVertical()),
-                DensityUtils.dp2px(mContext, config.getPaddingHorizontal()),
-                DensityUtils.dp2px(mContext, config.getPaddingVertical()));
+        mLayoutContainer.setPadding(DensityUtils.dp2px(mContext, config.getPaddingLeft()),
+                DensityUtils.dp2px(mContext, config.getPaddingTop()),
+                DensityUtils.dp2px(mContext, config.getPaddingRight()),
+                DensityUtils.dp2px(mContext, config.getPaddingBottom()));
 
         // Corner Radius && Background Color
         GradientDrawable drawable = new GradientDrawable();

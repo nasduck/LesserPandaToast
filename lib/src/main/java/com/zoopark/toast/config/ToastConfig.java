@@ -14,16 +14,20 @@ public final class ToastConfig implements Parcelable {
     private Integer textSize;
     private Integer bgColor;
     private Integer cornerRadius;
-    private Integer paddingHorizontal;
-    private Integer paddingVertical;
+    private Integer paddingTop;
+    private Integer paddingBottom;
+    private Integer paddingLeft;
+    private Integer paddingRight;
 
     private ToastConfig() {
         this.textColor = android.R.color.white;
         this.textSize = 14;
-        this.bgColor = R.color.black_alpha_50;
+        this.bgColor = R.color.black_alpha_70;
         this.cornerRadius = 6;
-        this.paddingHorizontal = 18;
-        this.paddingVertical = 12;
+        this.paddingTop = 12;
+        this.paddingBottom = 12;
+        this.paddingLeft = 24;
+        this.paddingRight = 24;
     }
 
     public static ToastConfig newInstance() {
@@ -86,21 +90,53 @@ public final class ToastConfig implements Parcelable {
         this.cornerRadius = cornerRadius;
     }
 
-    public Integer getPaddingHorizontal() {
-        return paddingHorizontal;
+    public Integer getPaddingTop() {
+        return paddingTop;
     }
 
-    public void setPaddingHorizontal(Integer paddingHorizontal) {
-        this.paddingHorizontal = paddingHorizontal;
+    public void setPaddingTop(Integer paddingTop) {
+        this.paddingTop = paddingTop;
     }
 
-    public Integer getPaddingVertical() {
-        return paddingVertical;
+    public Integer getPaddingBottom() {
+        return paddingBottom;
     }
 
-    public void setPaddingVertical(Integer paddingVertical) {
-        this.paddingVertical = paddingVertical;
+    public void setPaddingBottom(Integer paddingBottom) {
+        this.paddingBottom = paddingBottom;
     }
+
+    public Integer getPaddingLeft() {
+        return paddingLeft;
+    }
+
+    public void setPaddingLeft(Integer paddingLeft) {
+        this.paddingLeft = paddingLeft;
+    }
+
+    public Integer getPaddingRight() {
+        return paddingRight;
+    }
+
+    public void setPaddingRight(Integer paddingRight) {
+        this.paddingRight = paddingRight;
+    }
+
+    //    public Integer getPaddingHorizontal() {
+//        return paddingHorizontal;
+//    }
+//
+//    public void setPaddingHorizontal(Integer paddingHorizontal) {
+//        this.paddingHorizontal = paddingHorizontal;
+//    }
+//
+//    public Integer getPaddingVertical() {
+//        return paddingVertical;
+//    }
+//
+//    public void setPaddingVertical(Integer paddingVertical) {
+//        this.paddingVertical = paddingVertical;
+//    }
 
 
     @Override
@@ -117,8 +153,12 @@ public final class ToastConfig implements Parcelable {
         dest.writeValue(this.textSize);
         dest.writeValue(this.bgColor);
         dest.writeValue(this.cornerRadius);
-        dest.writeValue(this.paddingHorizontal);
-        dest.writeValue(this.paddingVertical);
+        dest.writeValue(this.paddingTop);
+        dest.writeValue(this.paddingBottom);
+        dest.writeValue(this.paddingLeft);
+        dest.writeValue(this.paddingRight);
+//        dest.writeValue(this.paddingHorizontal);
+//        dest.writeValue(this.paddingVertical);
     }
 
     protected ToastConfig(Parcel in) {
@@ -129,8 +169,12 @@ public final class ToastConfig implements Parcelable {
         this.textSize = (Integer) in.readValue(Integer.class.getClassLoader());
         this.bgColor = (Integer) in.readValue(Integer.class.getClassLoader());
         this.cornerRadius = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.paddingHorizontal = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.paddingVertical = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.paddingTop = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.paddingBottom = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.paddingLeft = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.paddingRight = (Integer) in.readValue(Integer.class.getClassLoader());
+//        this.paddingHorizontal = (Integer) in.readValue(Integer.class.getClassLoader());
+//        this.paddingVertical = (Integer) in.readValue(Integer.class.getClassLoader());
     }
 
     public static final Creator<ToastConfig> CREATOR = new Creator<ToastConfig>() {

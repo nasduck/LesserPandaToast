@@ -24,6 +24,7 @@ public class LesserPandaToast {
     public static void showSuccess(FragmentActivity activity) {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_success)
+                .setPadding(24)
                 .show();
     }
 
@@ -31,12 +32,15 @@ public class LesserPandaToast {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_success)
                 .setText(text)
+                .setPaddingTop(20)
+                .setPaddingBottom(12)
                 .show();
     }
 
     public static void showWarning(FragmentActivity activity) {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_warning)
+                .setPadding(24)
                 .show();
     }
 
@@ -44,12 +48,15 @@ public class LesserPandaToast {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_warning)
                 .setText(text)
+                .setPaddingTop(20)
+                .setPaddingBottom(12)
                 .show();
     }
 
     public static void showFailure(FragmentActivity activity) {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_failure)
+                .setPadding(24)
                 .show();
     }
 
@@ -57,6 +64,8 @@ public class LesserPandaToast {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_failure)
                 .setText(text)
+                .setPaddingTop(20)
+                .setPaddingBottom(12)
                 .show();
     }
 
@@ -64,6 +73,7 @@ public class LesserPandaToast {
         ToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
+                .setPadding(24)
                 .show();
     }
 
@@ -72,6 +82,8 @@ public class LesserPandaToast {
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
                 .setText(text)
+                .setPaddingTop(20)
+                .setPaddingBottom(12)
                 .show();
     }
 }

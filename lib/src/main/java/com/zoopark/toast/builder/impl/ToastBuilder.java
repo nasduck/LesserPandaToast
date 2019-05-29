@@ -69,13 +69,43 @@ public class ToastBuilder extends BaseToastBuilder {
         return this;
     }
 
+    public ToastBuilder setPaddingTop(Integer paddingTop) {
+        this.config.setPaddingTop(paddingTop);
+        return this;
+    }
+
+    public ToastBuilder setPaddingBottom(Integer paddingBottom) {
+        this.config.setPaddingBottom(paddingBottom);
+        return this;
+    }
+
+    public ToastBuilder setPaddingLeft(Integer paddingLeft) {
+        this.config.setPaddingLeft(paddingLeft);
+        return this;
+    }
+
+    public ToastBuilder setPaddingRight(Integer paddingRight) {
+        this.config.setPaddingRight(paddingRight);
+        return this;
+    }
+
     public ToastBuilder setPaddingHorizontal(Integer paddingHorizontal) {
-        this.config.setPaddingHorizontal(paddingHorizontal);
+        this.config.setPaddingLeft(paddingHorizontal);
+        this.config.setPaddingRight(paddingHorizontal);
         return this;
     }
 
     public ToastBuilder setPaddingVertical(Integer paddingVertical) {
-        this.config.setPaddingVertical(paddingVertical);
+        this.config.setPaddingTop(paddingVertical);
+        this.config.setPaddingBottom(paddingVertical);
+        return this;
+    }
+
+    public ToastBuilder setPadding(Integer padding) {
+        this.config.setPaddingTop(padding);
+        this.config.setPaddingBottom(padding);
+        this.config.setPaddingLeft(padding);
+        this.config.setPaddingRight(padding);
         return this;
     }
 
