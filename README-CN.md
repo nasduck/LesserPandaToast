@@ -16,6 +16,7 @@ LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud �
 * [贡献](#贡献)
 * [License](#license)
 
+
 ## 依赖
 
 步骤一：在项目的build.gradle中添加jitpack
@@ -47,6 +48,7 @@ dependencies {
 3. 失败
 4. 警告
 5. 正在加载
+
 
 ### 显示 Toast
 
@@ -97,13 +99,13 @@ ToastBuilder.getInstance(this)
         .setAnimation(Integer animation)                    // 设置图片的动画
         .setBgColor(Integer bgColor)                        // 设置背景颜色
         .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
-	.setPaddingTop(Integer paddingTop)		    // 设置顶部padding
-	.setPaddingBottom(Integer paddingBottom)	    // 设置底部padding
-	.setPaddingLeft(Integer paddingLeft)		    // 设置左边padding
-	.setPaddingRight(Integer paddingRight)		    // 设置右边padding
+	      .setPaddingTop(Integer paddingTop)		              // 设置顶部padding
+	      .setPaddingBottom(Integer paddingBottom)	          // 设置底部padding
+	      .setPaddingLeft(Integer paddingLeft)		            // 设置左边padding
+	      .setPaddingRight(Integer paddingRight)		          // 设置右边padding
         .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
         .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
-	.setPadding(Integer padding)			    // 设置padding
+	      .setPadding(Integer padding)			                  // 设置padding
         .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
         .setTextColor(Integer textColor)                    // 设置文字颜色
         .setTextSize(Integer textSize)                      // 设置文字大小
