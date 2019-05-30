@@ -6,6 +6,16 @@
 
 LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud 或 toast, 同时提供自定义方法来定义不同的样式. 用户可以手动控制消失或者自动延时消失. 如果你对 Dialog 感兴趣. 欢迎移步另外一个配套的开源项目 [GiantPandaToast](https://github.com/nasduck/GiantPandaDialog). 大熊猫和小熊猫总是搭配使用 :D
 
+## 目录
+
+* [依赖](#依赖)
+* [使用方式](#使用方式)
+    * [显示 Toast](#显示-toast)
+    * [隐藏 Toast](#隐藏-toast)
+    * [自定义 Toast](#自定义-toast)
+* [贡献](#贡献)
+* [License](#license)
+
 ## 依赖
 
 步骤一：在项目的build.gradle中添加jitpack
