@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">duckandroidtoast</string>
+    <string name="app_name">LesserPandaToast</string>
+
+    <string name="default_toast">Default Toast</string>
+    <string name="success_toast">Success Toast</string>
+    <string name="failure_toast">Failure Toast</string>
+    <string name="warning_toast">Warning Toast</string>
+    <string name="loading_toast">Loading Toast</string>
+    <string name="success_text_toast">Success Text Toast</string>
+    <string name="failure_text_toast">Failure Text Toast</string>
+    <string name="warning_text_toast">Warning Text Toast</string>
+    <string name="loading_text_toast">Loading Text Toast</string>
+    <string name="hide_toast">Hide Toast</string>
+    <string name="custom_toast">Custom Toast</string>
+
+    <string name="success">success</string>
+    <string name="failure">failure</string>
+    <string name="warning">warning</string>
+    <string name="loading">loading</string>
+
 </resources>

@@ -6,6 +6,17 @@
 
 LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud 或 toast, 同时提供自定义方法来定义不同的样式. 用户可以手动控制消失或者自动延时消失. 如果你对 Dialog 感兴趣. 欢迎移步另外一个配套的开源项目 [GiantPandaToast](https://github.com/nasduck/GiantPandaDialog). 大熊猫和小熊猫总是搭配使用 :D
 
+## 目录
+
+* [依赖](#依赖)
+* [使用方式](#使用方式)
+    * [显示 Toast](#显示-toast)
+    * [隐藏 Toast](#隐藏-toast)
+    * [自定义 Toast](#自定义-toast)
+* [贡献](#贡献)
+* [License](#license)
+
+
 ## 依赖
 
 步骤一：在项目的build.gradle中添加jitpack
@@ -38,7 +49,8 @@ dependencies {
 4. 警告
 5. 正在加载
 
-### 调用文字Toast
+
+### 显示 Toast
 
 ```java
 // 纯文字
@@ -61,7 +73,7 @@ DuckToast.showLoading(this);                // 只有图标，不含文字
 DuckToast.showLoading(this, "loading");     // 包含图标和文字
 ```
 
-// todo 图片
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
 
 > 在用户调用 showXXXX 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
 
@@ -77,7 +89,7 @@ DuckToast.dismiss();                // 立即消失
 DuckToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫秒)
 ```
 
-### 自定义
+### 自定义 Toast
 
 自定义 Toast, 建议进行进一步封装简化调用:
 
@@ -87,8 +99,13 @@ ToastBuilder.getInstance(this)
         .setAnimation(Integer animation)                    // 设置图片的动画
         .setBgColor(Integer bgColor)                        // 设置背景颜色
         .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
+	      .setPaddingTop(Integer paddingTop)		              // 设置顶部padding
+	      .setPaddingBottom(Integer paddingBottom)	          // 设置底部padding
+	      .setPaddingLeft(Integer paddingLeft)		            // 设置左边padding
+	      .setPaddingRight(Integer paddingRight)		          // 设置右边padding
         .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
         .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
+	      .setPadding(Integer padding)			                  // 设置padding
         .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
         .setTextColor(Integer textColor)                    // 设置文字颜色
         .setTextSize(Integer textSize)                      // 设置文字大小
