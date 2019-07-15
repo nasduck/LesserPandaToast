@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.zoopark.toast.builder.BaseToastBuilder;
 import com.zoopark.toast.config.ToastConfig;
+import com.zoopark.toast.config.ToastStyle;
 
 
 public class ToastBuilder extends BaseToastBuilder {
@@ -19,8 +20,13 @@ public class ToastBuilder extends BaseToastBuilder {
         this.config = config;
     }
 
+    public static ToastBuilder getInstance(FragmentActivity activity, ToastStyle style) {
+        return create(activity, ToastConfig.newInstance(style));
+    }
+
+    // default dark style
     public static ToastBuilder getInstance(FragmentActivity activity) {
-        return create(activity, ToastConfig.newInstance());
+        return create(activity, ToastConfig.newInstance(ToastStyle.DARK));
     }
 
     public static ToastBuilder create(FragmentActivity activity, ToastConfig config) {
