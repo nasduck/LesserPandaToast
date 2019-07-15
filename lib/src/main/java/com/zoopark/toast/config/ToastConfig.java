@@ -7,6 +7,8 @@ import com.nasduck.lib.R;
 
 public final class ToastConfig implements Parcelable {
 
+//    private ToastStyle style;
+
     private String text;
     private Integer image;
     private Integer anim;
@@ -19,10 +21,18 @@ public final class ToastConfig implements Parcelable {
     private Integer paddingLeft;
     private Integer paddingRight;
 
-    private ToastConfig() {
-        this.textColor = android.R.color.white;
+    private ToastConfig(ToastStyle style) {
+        switch (style) {
+            case DARK:
+                this.textColor = android.R.color.white;
+                this.bgColor = R.color.black_alpha_70;
+                break;
+            case LIGHT:
+                this.textColor = R.color.text_black;
+                this.bgColor = android.R.color.white;
+                break;
+        }
         this.textSize = 14;
-        this.bgColor = R.color.black_alpha_70;
         this.cornerRadius = 6;
         this.paddingTop = 12;
         this.paddingBottom = 12;
@@ -30,8 +40,8 @@ public final class ToastConfig implements Parcelable {
         this.paddingRight = 24;
     }
 
-    public static ToastConfig newInstance() {
-        return new ToastConfig();
+    public static ToastConfig newInstance(ToastStyle style) {
+        return new ToastConfig(style);
     }
 
     public String getText() {
@@ -122,23 +132,6 @@ public final class ToastConfig implements Parcelable {
         this.paddingRight = paddingRight;
     }
 
-    //    public Integer getPaddingHorizontal() {
-//        return paddingHorizontal;
-//    }
-//
-//    public void setPaddingHorizontal(Integer paddingHorizontal) {
-//        this.paddingHorizontal = paddingHorizontal;
-//    }
-//
-//    public Integer getPaddingVertical() {
-//        return paddingVertical;
-//    }
-//
-//    public void setPaddingVertical(Integer paddingVertical) {
-//        this.paddingVertical = paddingVertical;
-//    }
-
-
     @Override
     public int describeContents() {
         return 0;
@@ -157,8 +150,6 @@ public final class ToastConfig implements Parcelable {
         dest.writeValue(this.paddingBottom);
         dest.writeValue(this.paddingLeft);
         dest.writeValue(this.paddingRight);
-//        dest.writeValue(this.paddingHorizontal);
-//        dest.writeValue(this.paddingVertical);
     }
 
     protected ToastConfig(Parcel in) {
@@ -173,8 +164,6 @@ public final class ToastConfig implements Parcelable {
         this.paddingBottom = (Integer) in.readValue(Integer.class.getClassLoader());
         this.paddingLeft = (Integer) in.readValue(Integer.class.getClassLoader());
         this.paddingRight = (Integer) in.readValue(Integer.class.getClassLoader());
-//        this.paddingHorizontal = (Integer) in.readValue(Integer.class.getClassLoader());
-//        this.paddingVertical = (Integer) in.readValue(Integer.class.getClassLoader());
     }
 
     public static final Creator<ToastConfig> CREATOR = new Creator<ToastConfig>() {
