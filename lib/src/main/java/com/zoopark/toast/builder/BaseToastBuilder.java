@@ -53,9 +53,12 @@ public abstract class BaseToastBuilder implements IToastBuilder {
         FragmentManager manager = getActivity().getSupportFragmentManager();
         Fragment frag = manager.findFragmentByTag(TOAST_TAG);
         if (frag != null) {
-            FragmentTransaction t = manager.beginTransaction();
+
+            /**FragmentTransaction t = manager.beginTransaction();
             t.remove(frag);
-            t.commitAllowingStateLoss();
+            t.commitAllowingStateLoss();**/
+
+            ((Toast)frag).dismiss();
         }
     }
 
