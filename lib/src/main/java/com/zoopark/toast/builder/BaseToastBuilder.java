@@ -1,8 +1,10 @@
 package com.zoopark.toast.builder;
 
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.zoopark.toast.handler.ToastHandler;
 import com.zoopark.toast.toast.impl.Toast;
@@ -19,13 +21,13 @@ public abstract class BaseToastBuilder implements IToastBuilder {
     public void show() {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         FragmentManager manager = getActivity().getSupportFragmentManager();
-        Fragment frag = manager.findFragmentByTag(TOAST_TAG);
-        if (frag != null) {
-            ((Toast) frag).updateUI(getConfig());
+        Toast toast = (Toast)manager.findFragmentByTag(TOAST_TAG);
+        if (toast != null) {
+            toast.updateUI(getConfig());
         } else {
             // Show Toast
             Toast.newInstance(getConfig())
-                    .show(manager, TOAST_TAG);
+                    .showNow(manager, TOAST_TAG);
         }
     }
 
