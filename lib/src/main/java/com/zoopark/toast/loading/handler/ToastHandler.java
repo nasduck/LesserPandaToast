@@ -1,9 +1,9 @@
-package com.zoopark.toast.handler;
+package com.zoopark.toast.loading.handler;
 
 import android.os.Handler;
 import android.os.Message;
 
-import com.zoopark.toast.builder.IToastBuilder;
+import com.zoopark.toast.loading.builder.ILoadingToastBuilder;
 
 import java.lang.ref.WeakReference;
 
@@ -11,11 +11,11 @@ public class ToastHandler extends Handler {
 
     public static final int MSG_HIDE = 999;
 
-    private WeakReference<IToastBuilder> mBuilderRef;
+    private WeakReference<ILoadingToastBuilder> mBuilderRef;
 
     public ToastHandler() {}
 
-    public void set(IToastBuilder builder) {
+    public void set(ILoadingToastBuilder builder) {
         this.mBuilderRef = new WeakReference<>(builder);
     }
 

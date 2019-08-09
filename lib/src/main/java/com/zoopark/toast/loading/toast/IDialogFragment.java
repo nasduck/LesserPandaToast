@@ -1,4 +1,4 @@
-package com.zoopark.toast.toast;
+package com.zoopark.toast.loading.toast;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/ic_back_white">
 
         <TextView
             android:id="@+id/tv_toolbar"
@@ -18,7 +20,7 @@
             android:layout_gravity="center"
             android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:text="@string/app_name"/>
+            android:text="@string/loading_toast"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -33,24 +35,31 @@
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onDarkToastClick"
-                android:text="@string/dark_toast"/>
+                android:onClick="onDarkLoadingToastClick"
+                android:text="@string/dark_loading_toast"/>
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onLightToastClick"
-                android:text="@string/light_toast"/>
+                android:onClick="onDarkLoadingTextToastClick"
+                android:text="@string/dark_loading_text_toast"/>
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onLoadingToastClick"
-                android:text="@string/loading_toast"/>
+                android:onClick="onLightLoadingToastClick"
+                android:text="@string/light_loading_toast"/>
 
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onLightLoadingTextToastClick"
+                android:text="@string/light_loading_text_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onHideToastClick"
+                android:text="@string/hide_toast"/>
 
         </LinearLayout>
 
     </ScrollView>
-
-
 
 </LinearLayout>

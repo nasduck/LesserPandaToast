@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary"
+        app:navigationIcon="@drawable/ic_back_white">
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:text="@string/dark_toast"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onDefaultClick"
+                android:text="@string/default_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onSuccessClick"
+                android:text="@string/success_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onFailureClick"
+                android:text="@string/failure_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onWarningClick"
+                android:text="@string/warning_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onSuccessTextClick"
+                android:text="@string/success_text_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onFailureTextClick"
+                android:text="@string/failure_text_toast"/>
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onWarningTextClick"
+                android:text="@string/warning_text_toast"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

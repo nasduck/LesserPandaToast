@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LoadingToastActivity"></activity>
+        <activity android:name=".DarkToastActivity" />
+        <activity android:name=".LightToastActivity" />
         <activity android:name=".ToastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

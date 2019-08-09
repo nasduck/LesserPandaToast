@@ -1,4 +1,4 @@
-package com.zoopark.toast.config;
+package com.zoopark.toast.loading.config;
 
 public enum ToastStyle {
 
