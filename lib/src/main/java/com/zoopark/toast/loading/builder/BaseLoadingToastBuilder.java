@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.zoopark.toast.loading.handler.ToastHandler;
-import com.zoopark.toast.loading.toast.impl.Toast;
+import com.zoopark.toast.loading.toast.impl.LoadingToast;
 
 public abstract class BaseLoadingToastBuilder implements ILoadingToastBuilder {
 
@@ -18,12 +18,12 @@ public abstract class BaseLoadingToastBuilder implements ILoadingToastBuilder {
     public void show() {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         FragmentManager manager = getActivity().getSupportFragmentManager();
-        Toast toast = (Toast)manager.findFragmentByTag(TOAST_TAG);
-        if (toast != null) {
-            toast.updateUI(getConfig());
+        LoadingToast loadingToast = (LoadingToast)manager.findFragmentByTag(TOAST_TAG);
+        if (loadingToast != null) {
+            loadingToast.updateUI(getConfig());
         } else {
-            // Show Toast
-            Toast.newInstance(getConfig())
+            // Show LoadingToast
+            LoadingToast.newInstance(getConfig())
                     .showNow(manager, TOAST_TAG);
         }
     }
@@ -57,7 +57,7 @@ public abstract class BaseLoadingToastBuilder implements ILoadingToastBuilder {
             t.remove(frag);
             t.commitAllowingStateLoss();**/
 
-            ((Toast)frag).dismiss();
+            ((LoadingToast)frag).dismiss();
         }
     }
 

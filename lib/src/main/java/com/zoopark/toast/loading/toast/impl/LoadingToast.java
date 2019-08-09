@@ -17,7 +17,7 @@ import com.zoopark.toast.loading.config.LoadingToastConfig;
 import com.zoopark.toast.loading.toast.BaseToast;
 import com.zoopark.toast.utils.LesserDensityUtils;
 
-public class Toast extends BaseToast {
+public class LoadingToast extends BaseToast {
 
     private LinearLayout mLayoutContainer;
     private ImageView mIvImage;
@@ -25,14 +25,14 @@ public class Toast extends BaseToast {
 
     private LoadingToastConfig mConfig;
 
-    public Toast() {}
+    public LoadingToast() {}
 
-    public static Toast newInstance(LoadingToastConfig config){
-        Toast toast = new Toast();
+    public static LoadingToast newInstance(LoadingToastConfig config){
+        LoadingToast loadingToast = new LoadingToast();
         Bundle args = new Bundle();
         args.putParcelable("config", config);
-        toast.setArguments(args);
-        return toast;
+        loadingToast.setArguments(args);
+        return loadingToast;
     }
 
     @Override
