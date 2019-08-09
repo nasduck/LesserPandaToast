@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -54,11 +55,6 @@
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onLoadingClick"
-                android:text="@string/loading_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
                 android:onClick="onSuccessTextClick"
                 android:text="@string/success_text_toast"/>
 
@@ -72,20 +68,8 @@
                 android:onClick="onWarningTextClick"
                 android:text="@string/warning_text_toast"/>
 
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onLoadingTextClick"
-                android:text="@string/loading_text_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onHideToastClick"
-                android:text="@string/hide_toast"/>
-
         </LinearLayout>
 
     </ScrollView>
-
-
 
 </LinearLayout>

@@ -41,6 +41,10 @@
                 android:onClick="onLightToastClick"
                 android:text="@string/light_toast"/>
 
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="onLoadingToastClick"
+                android:text="@string/loading_toast"/>
 
 
         </LinearLayout>

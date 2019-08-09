@@ -4,18 +4,23 @@
 
     <string name="dark_toast">深色主题</string>
     <string name="light_toast">亮色主题</string>
+    <string name="loading_toast">加载吐司</string>
 
     <string name="default_toast">默认吐司</string>
     <string name="success_toast">成功吐司</string>
     <string name="failure_toast">失败吐司</string>
     <string name="warning_toast">警告吐司</string>
-    <string name="loading_toast">加载中吐司</string>
     <string name="success_text_toast">带文字的成功吐司</string>
     <string name="failure_text_toast">带文字的失败吐司</string>
     <string name="warning_text_toast">带文字的警告吐司</string>
-    <string name="loading_text_toast">带文字的加载中吐司</string>
+
     <string name="hide_toast">隐藏吐司</string>
     <string name="custom_toast">自定义吐司</string>
+
+    <string name="dark_loading_toast">黑色加载中吐司</string>
+    <string name="dark_loading_text_toast">黑色带文字的加载中吐司</string>
+    <string name="light_loading_toast">白色加载中吐司</string>
+    <string name="light_loading_text_toast">白色带文字的加载中吐司</string>
 
     <string name="success">成功</string>
     <string name="failure">失败</string>

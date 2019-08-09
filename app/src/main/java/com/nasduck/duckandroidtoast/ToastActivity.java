@@ -27,5 +27,10 @@ public class ToastActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onLoadingToastClick(View view) {
+        Intent intent = new Intent(ToastActivity.this, LoadingToastActivity.class);
+        startActivity(intent);
+    }
+
 
 }

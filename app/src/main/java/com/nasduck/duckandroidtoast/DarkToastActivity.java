@@ -33,42 +33,30 @@ public class DarkToastActivity extends AppCompatActivity {
     }
 
     public void onDefaultClick(View view) {
-        LesserPandaToast.show(this, String.valueOf(getResources().getText(R.string.default_toast)), ToastStyle.DARK);
+        LesserPandaToast.show(this, String.valueOf(getResources().getText(R.string.default_toast)));
     }
 
     public void onSuccessClick(View view) {
-        LesserPandaToast.showSuccess(this, ToastStyle.DARK);
+        LesserPandaToast.showSuccess(this);
     }
 
     public void onFailureClick(View view) {
-        LesserPandaToast.showFailure(this, ToastStyle.DARK);
+        LesserPandaToast.showFailure(this);
     }
 
     public void onWarningClick(View view) {
-        LesserPandaToast.showWarning(this, ToastStyle.DARK);
-    }
-
-    public void onLoadingClick(View view) {
-        LesserPandaToast.showLoading(this, ToastStyle.DARK);
+        LesserPandaToast.showWarning(this);
     }
 
     public void onSuccessTextClick(View view) {
-        LesserPandaToast.showSuccess(this, String.valueOf(getResources().getText(R.string.success)), ToastStyle.DARK);
+        LesserPandaToast.showSuccess(this, String.valueOf(getResources().getText(R.string.success)));
     }
 
     public void onFailureTextClick(View view) {
-        LesserPandaToast.showFailure(this, String.valueOf(getResources().getText(R.string.failure)), ToastStyle.DARK);
+        LesserPandaToast.showFailure(this, String.valueOf(getResources().getText(R.string.failure)));
     }
 
     public void onWarningTextClick(View view) {
-        LesserPandaToast.showWarning(this, String.valueOf(getResources().getText(R.string.warning)), ToastStyle.DARK);
-    }
-
-    public void onLoadingTextClick(View view) {
-        LesserPandaToast.showLoading(this, String.valueOf(getResources().getText(R.string.loading)), ToastStyle.DARK);
-    }
-
-    public void onHideToastClick(View view) {
-        LesserPandaToast.dismiss();
+        LesserPandaToast.showWarning(this, String.valueOf(getResources().getText(R.string.warning)));
     }
 }

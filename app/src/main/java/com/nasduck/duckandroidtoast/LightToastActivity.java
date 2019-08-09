@@ -48,10 +48,6 @@ public class LightToastActivity extends AppCompatActivity {
         LesserPandaToast.showWarning(this, ToastStyle.LIGHT);
     }
 
-    public void onLoadingClick(View view) {
-        LesserPandaToast.showLoading(this, ToastStyle.LIGHT);
-    }
-
     public void onSuccessTextClick(View view) {
         LesserPandaToast.showSuccess(this, String.valueOf(getResources().getText(R.string.success)), ToastStyle.LIGHT);
     }
@@ -64,13 +60,6 @@ public class LightToastActivity extends AppCompatActivity {
         LesserPandaToast.showWarning(this, String.valueOf(getResources().getText(R.string.warning)), ToastStyle.LIGHT);
     }
 
-    public void onLoadingTextClick(View view) {
-        LesserPandaToast.showLoading(this, String.valueOf(getResources().getText(R.string.loading)), ToastStyle.LIGHT);
-    }
-
-    public void onHideToastClick(View view) {
-        LesserPandaToast.dismiss();
-    }
 
 
 }
