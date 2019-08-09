@@ -1,13 +1,11 @@
-package com.zoopark.toast.config;
+package com.zoopark.toast.loading.config;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.nasduck.lib.R;
 
-public final class ToastConfig implements Parcelable {
-
-//    private ToastStyle style;
+public final class LoadingToastConfig implements Parcelable {
 
     private String text;
     private Integer image;
@@ -21,7 +19,7 @@ public final class ToastConfig implements Parcelable {
     private Integer paddingLeft;
     private Integer paddingRight;
 
-    private ToastConfig(ToastStyle style) {
+    private LoadingToastConfig(ToastStyle style) {
         switch (style) {
             case DARK:
                 this.textColor = android.R.color.white;
@@ -40,8 +38,8 @@ public final class ToastConfig implements Parcelable {
         this.paddingRight = 24;
     }
 
-    public static ToastConfig newInstance(ToastStyle style) {
-        return new ToastConfig(style);
+    public static LoadingToastConfig newInstance(ToastStyle style) {
+        return new LoadingToastConfig(style);
     }
 
     public String getText() {
@@ -152,7 +150,7 @@ public final class ToastConfig implements Parcelable {
         dest.writeValue(this.paddingRight);
     }
 
-    protected ToastConfig(Parcel in) {
+    protected LoadingToastConfig(Parcel in) {
         this.text = in.readString();
         this.image = (Integer) in.readValue(Integer.class.getClassLoader());
         this.anim = (Integer) in.readValue(Integer.class.getClassLoader());
@@ -166,15 +164,15 @@ public final class ToastConfig implements Parcelable {
         this.paddingRight = (Integer) in.readValue(Integer.class.getClassLoader());
     }
 
-    public static final Creator<ToastConfig> CREATOR = new Creator<ToastConfig>() {
+    public static final Creator<LoadingToastConfig> CREATOR = new Creator<LoadingToastConfig>() {
         @Override
-        public ToastConfig createFromParcel(Parcel source) {
-            return new ToastConfig(source);
+        public LoadingToastConfig createFromParcel(Parcel source) {
+            return new LoadingToastConfig(source);
         }
 
         @Override
-        public ToastConfig[] newArray(int size) {
-            return new ToastConfig[size];
+        public LoadingToastConfig[] newArray(int size) {
+            return new LoadingToastConfig[size];
         }
     };
 }

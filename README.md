@@ -13,9 +13,9 @@ you will find they are used together. Please enjoy them :D
 
 * [Setup](#setup)
 * [Usage](#usage)
-    * [Show Toast](#show-toast)
-    * [Dismiss Toast](#dismiss-toast)
-    * [Custom Toast](#custom-toast)
+    * [Show Toast](#show-loadingToast)
+    * [Dismiss Toast](#dismiss-loadingToast)
+    * [Custom Toast](#custom-loadingToast)
 * [Contributer](#contributer)
 * [License](#license)
 

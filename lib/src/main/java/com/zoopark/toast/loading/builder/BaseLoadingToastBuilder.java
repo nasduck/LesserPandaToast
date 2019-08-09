@@ -1,15 +1,12 @@
-package com.zoopark.toast.builder;
+package com.zoopark.toast.loading.builder;
 
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
-import com.zoopark.toast.handler.ToastHandler;
-import com.zoopark.toast.toast.impl.Toast;
+import com.zoopark.toast.loading.handler.ToastHandler;
+import com.zoopark.toast.loading.toast.impl.LoadingToast;
 
-public abstract class BaseToastBuilder implements IToastBuilder {
+public abstract class BaseLoadingToastBuilder implements ILoadingToastBuilder {
 
     private final static String TOAST_TAG = "toast_tag";
 
@@ -21,12 +18,12 @@ public abstract class BaseToastBuilder implements IToastBuilder {
     public void show() {
         mHandler.removeMessages(ToastHandler.MSG_HIDE);
         FragmentManager manager = getActivity().getSupportFragmentManager();
-        Toast toast = (Toast)manager.findFragmentByTag(TOAST_TAG);
-        if (toast != null) {
-            toast.updateUI(getConfig());
+        LoadingToast loadingToast = (LoadingToast)manager.findFragmentByTag(TOAST_TAG);
+        if (loadingToast != null) {
+            loadingToast.updateUI(getConfig());
         } else {
-            // Show Toast
-            Toast.newInstance(getConfig())
+            // Show LoadingToast
+            LoadingToast.newInstance(getConfig())
                     .showNow(manager, TOAST_TAG);
         }
     }
@@ -60,7 +57,7 @@ public abstract class BaseToastBuilder implements IToastBuilder {
             t.remove(frag);
             t.commitAllowingStateLoss();**/
 
-            ((Toast)frag).dismiss();
+            ((LoadingToast)frag).dismiss();
         }
     }
 

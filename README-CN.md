@@ -4,15 +4,15 @@
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)&ensp;
 [![API](https://img.shields.io/badge/License-Apche2.0-brightgreen.svg?style=flat)](https://github.com/nasduck/LesserPandaToast/blob/master/LICENSE)
 
-LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud 或 toast, 同时提供自定义方法来定义不同的样式. 用户可以手动控制消失或者自动延时消失. 如果你对 Dialog 感兴趣. 欢迎移步另外一个配套的开源项目 [GiantPandaToast](https://github.com/nasduck/GiantPandaDialog). 大熊猫和小熊猫总是搭配使用 :D
+LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud 或 loadingToast, 同时提供自定义方法来定义不同的样式. 用户可以手动控制消失或者自动延时消失. 如果你对 Dialog 感兴趣. 欢迎移步另外一个配套的开源项目 [GiantPandaToast](https://github.com/nasduck/GiantPandaDialog). 大熊猫和小熊猫总是搭配使用 :D
 
 ## 目录
 
 * [依赖](#依赖)
 * [使用方式](#使用方式)
-    * [显示 Toast](#显示-toast)
-    * [隐藏 Toast](#隐藏-toast)
-    * [自定义 Toast](#自定义-toast)
+    * [显示 Toast](#显示-loadingToast)
+    * [隐藏 Toast](#隐藏-loadingToast)
+    * [自定义 Toast](#自定义-loadingToast)
 * [贡献](#贡献)
 * [License](#license)
 
