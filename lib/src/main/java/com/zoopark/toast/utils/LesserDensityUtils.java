@@ -5,7 +5,7 @@ import android.content.Context;
 /**
  * dp/px/sp Utils
  */
-public class DensityUtils {
+public class LesserDensityUtils {
 
     /**
      * dp -> px

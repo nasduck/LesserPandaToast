@@ -1,4 +1,4 @@
-package com.zoopark.toast.toast;
+package com.zoopark.toast.loading.toast;
 
 import android.content.Context;
 import android.os.Bundle;

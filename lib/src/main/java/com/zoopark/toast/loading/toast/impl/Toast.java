@@ -1,4 +1,4 @@
-package com.zoopark.toast.toast.impl;
+package com.zoopark.toast.loading.toast.impl;
 
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nasduck.lib.R;
-import com.zoopark.toast.config.ToastConfig;
-import com.zoopark.toast.toast.BaseToast;
-import com.zoopark.toast.utils.DensityUtils;
+import com.zoopark.toast.loading.config.LoadingToastConfig;
+import com.zoopark.toast.loading.toast.BaseToast;
+import com.zoopark.toast.utils.LesserDensityUtils;
 
 public class Toast extends BaseToast {
 
@@ -23,11 +23,11 @@ public class Toast extends BaseToast {
     private ImageView mIvImage;
     private TextView mTvTitle;
 
-    private ToastConfig mConfig;
+    private LoadingToastConfig mConfig;
 
     public Toast() {}
 
-    public static Toast newInstance(ToastConfig config){
+    public static Toast newInstance(LoadingToastConfig config){
         Toast toast = new Toast();
         Bundle args = new Bundle();
         args.putParcelable("config", config);
@@ -58,7 +58,7 @@ public class Toast extends BaseToast {
         updateUI(mConfig);
     }
 
-    public void updateUI(ToastConfig config) {
+    public void updateUI(LoadingToastConfig config) {
 
         // Title
         if (TextUtils.isEmpty(config.getText())) {
@@ -83,7 +83,7 @@ public class Toast extends BaseToast {
 
         if (config.getImage() != null && !TextUtils.isEmpty(config.getText())) {
             ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mTvTitle.getLayoutParams();
-            lp.topMargin = DensityUtils.dp2px(getContext(), 16);
+            lp.topMargin = LesserDensityUtils.dp2px(getContext(), 16);
             mTvTitle.setLayoutParams(lp);
         } else {
             ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mTvTitle.getLayoutParams();
@@ -97,14 +97,14 @@ public class Toast extends BaseToast {
         }
 
         // Padding
-        mLayoutContainer.setPadding(DensityUtils.dp2px(mContext, config.getPaddingLeft()),
-                DensityUtils.dp2px(mContext, config.getPaddingTop()),
-                DensityUtils.dp2px(mContext, config.getPaddingRight()),
-                DensityUtils.dp2px(mContext, config.getPaddingBottom()));
+        mLayoutContainer.setPadding(LesserDensityUtils.dp2px(mContext, config.getPaddingLeft()),
+                LesserDensityUtils.dp2px(mContext, config.getPaddingTop()),
+                LesserDensityUtils.dp2px(mContext, config.getPaddingRight()),
+                LesserDensityUtils.dp2px(mContext, config.getPaddingBottom()));
 
         // Corner Radius && Background Color
         GradientDrawable drawable = new GradientDrawable();
-        drawable.setCornerRadius(DensityUtils.dp2px(mContext, config.getCornerRadius()));
+        drawable.setCornerRadius(LesserDensityUtils.dp2px(mContext, config.getCornerRadius()));
         drawable.setColor(mContext.getResources().getColor(config.getBgColor()));
         mLayoutContainer.setBackground(drawable);
     }

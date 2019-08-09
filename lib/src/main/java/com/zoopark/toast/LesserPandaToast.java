@@ -3,47 +3,48 @@ package com.zoopark.toast;
 import android.support.v4.app.FragmentActivity;
 
 import com.nasduck.lib.R;
-import com.zoopark.toast.builder.impl.ToastBuilder;
-import com.zoopark.toast.config.ToastStyle;
+import com.zoopark.toast.lesser.LesserToastBuilder;
+import com.zoopark.toast.loading.builder.impl.LoadingToastBuilder;
+import com.zoopark.toast.loading.config.ToastStyle;
 
 public class LesserPandaToast {
 
     public static void dismiss() {
-        ToastBuilder.dismiss();
+        LoadingToastBuilder.dismiss();
     }
 
     public static void dismiss(long delay) {
-        ToastBuilder.dismiss(delay);
+        LoadingToastBuilder.dismiss(delay);
     }
 
     public static void show(FragmentActivity activity, String text) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setText(text)
                 .show();
     }
 
     public static void show(FragmentActivity activity, String text, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LesserToastBuilder.getInstance(activity, style)
                 .setText(text)
                 .show();
     }
 
     public static void showSuccess(FragmentActivity activity) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_success)
                 .setPadding(24)
                 .show();
     }
 
     public static void showSuccess(FragmentActivity activity, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LesserToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_success)
                 .setPadding(24)
                 .show();
     }
 
     public static void showSuccess(FragmentActivity activity, String text) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_success)
                 .setText(text)
                 .setPaddingTop(20)
@@ -52,7 +53,7 @@ public class LesserPandaToast {
     }
 
     public static void showSuccess(FragmentActivity activity, String text, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LesserToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_success)
                 .setText(text)
                 .setPaddingTop(20)
@@ -61,7 +62,7 @@ public class LesserPandaToast {
     }
 
     public static void showWarning(FragmentActivity activity) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_warning)
                 .setPadding(24)
                 .show();
@@ -70,13 +71,13 @@ public class LesserPandaToast {
     public static void showWarning(FragmentActivity activity, ToastStyle style) {
         switch (style) {
             case DARK:
-                ToastBuilder.getInstance(activity, style)
+                LesserToastBuilder.getInstance(activity, style)
                         .setImage(R.drawable.ic_warning)
                         .setPadding(24)
                         .show();
                 break;
             case LIGHT:
-                ToastBuilder.getInstance(activity, style)
+                LesserToastBuilder.getInstance(activity, style)
                         .setImage(R.drawable.ic_warning_dark)
                         .setPadding(24)
                         .show();
@@ -86,7 +87,7 @@ public class LesserPandaToast {
     }
 
     public static void showWarning(FragmentActivity activity, String text) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_warning)
                 .setText(text)
                 .setPaddingTop(20)
@@ -97,7 +98,7 @@ public class LesserPandaToast {
     public static void showWarning(FragmentActivity activity, String text, ToastStyle style) {
         switch (style) {
             case DARK:
-                ToastBuilder.getInstance(activity, style)
+                LesserToastBuilder.getInstance(activity, style)
                         .setImage(R.drawable.ic_warning)
                         .setText(text)
                         .setPaddingTop(20)
@@ -105,7 +106,7 @@ public class LesserPandaToast {
                         .show();
                 break;
             case LIGHT:
-                ToastBuilder.getInstance(activity, style)
+                LesserToastBuilder.getInstance(activity, style)
                         .setImage(R.drawable.ic_warning_dark)
                         .setText(text)
                         .setPaddingTop(20)
@@ -117,21 +118,21 @@ public class LesserPandaToast {
     }
 
     public static void showFailure(FragmentActivity activity) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_failure)
                 .setPadding(24)
                 .show();
     }
 
     public static void showFailure(FragmentActivity activity, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LesserToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_failure)
                 .setPadding(24)
                 .show();
     }
 
     public static void showFailure(FragmentActivity activity, String text) {
-        ToastBuilder.getInstance(activity)
+        LesserToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_failure)
                 .setText(text)
                 .setPaddingTop(20)
@@ -140,7 +141,7 @@ public class LesserPandaToast {
     }
 
     public static void showFailure(FragmentActivity activity, String text, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LesserToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_failure)
                 .setText(text)
                 .setPaddingTop(20)
@@ -149,7 +150,7 @@ public class LesserPandaToast {
     }
 
     public static void showLoading(FragmentActivity activity) {
-        ToastBuilder.getInstance(activity)
+        LoadingToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
                 .setPadding(24)
@@ -157,7 +158,7 @@ public class LesserPandaToast {
     }
 
     public static void showLoading(FragmentActivity activity, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LoadingToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
                 .setPadding(24)
@@ -165,7 +166,7 @@ public class LesserPandaToast {
     }
 
     public static void showLoading(FragmentActivity activity, String text) {
-        ToastBuilder.getInstance(activity)
+        LoadingToastBuilder.getInstance(activity)
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
                 .setText(text)
@@ -175,7 +176,7 @@ public class LesserPandaToast {
     }
 
     public static void showLoading(FragmentActivity activity, String text, ToastStyle style) {
-        ToastBuilder.getInstance(activity, style)
+        LoadingToastBuilder.getInstance(activity, style)
                 .setImage(R.drawable.ic_loading)
                 .setAnimation(R.anim.anim_loading_rotate)
                 .setText(text)

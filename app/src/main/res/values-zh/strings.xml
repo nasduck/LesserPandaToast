@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">LesserPandaToast</string>
 
+    <string name="dark_toast">深色主题</string>
+    <string name="light_toast">亮色主题</string>
+
     <string name="default_toast">默认吐司</string>
     <string name="success_toast">成功吐司</string>
     <string name="failure_toast">失败吐司</string>

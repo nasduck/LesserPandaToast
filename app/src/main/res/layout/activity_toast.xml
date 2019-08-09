@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -32,58 +33,15 @@
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onDefaultClick"
-                android:text="@string/default_toast"/>
+                android:onClick="onDarkToastClick"
+                android:text="@string/dark_toast"/>
 
             <Button
                 style="@style/ButtonStyle"
-                android:onClick="onSuccessClick"
-                android:text="@string/success_toast"/>
+                android:onClick="onLightToastClick"
+                android:text="@string/light_toast"/>
 
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onFailureClick"
-                android:text="@string/failure_toast"/>
 
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onWarningClick"
-                android:text="@string/warning_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onLoadingClick"
-                android:text="@string/loading_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onSuccessTextClick"
-                android:text="@string/success_text_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onFailureTextClick"
-                android:text="@string/failure_text_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onWarningTextClick"
-                android:text="@string/warning_text_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onLoadingTextClick"
-                android:text="@string/loading_text_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onHideToastClick"
-                android:text="@string/hide_toast"/>
-
-            <Button
-                style="@style/ButtonStyle"
-                android:onClick="onToastCustomClick"
-                android:text="@string/custom_toast"/>
 
         </LinearLayout>
 

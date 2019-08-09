@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LesserPandaToast</string>
 
+    <string name="dark_toast">Dark Theme</string>
+    <string name="light_toast">Light Theme</string>
+
     <string name="default_toast">Default Toast</string>
     <string name="success_toast">Success Toast</string>
     <string name="failure_toast">Failure Toast</string>
