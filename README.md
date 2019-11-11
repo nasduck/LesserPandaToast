@@ -38,7 +38,7 @@ Adding the following dependency to app `build.gradle` file:
 
 ```
 dependencies {
-    implementation 'com.github.nasduck:LesserPandaToast:1.0.1'
+    implementation 'com.github.nasduck:LesserPandaToast:1.0.2'
 }
 ```
 
@@ -53,7 +53,7 @@ LesserPandaToast includes two types of Toast：Tip Toast and Loading Toast
 3. Failure
 4. Warning
 
-### Show Tip Toast
+#### Show Tip Toast
 ```java
 // Text only
 LesserToastBuilder.show(this, "Toast Default");
@@ -73,35 +73,35 @@ LesserToastBuilder.showWarning(this, "warning");     // Image and text
 
 <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" >
 
-### Dismiss Tip Toast
+#### Dismiss Tip Toast
 Tip Toast is designed based on Android native Toast, so there is no need to hide manually and the display time is the same as that of native Toast.
 
-### Custom Tip Toast
+#### Custom Tip Toast
 ```java
 LesserToastBuilder.getInstance(this)
-	.setImage(Integer image)                            // 设置图片，如未设置, 则图片不显示，图片相关设置也不生效
-        .setAnimation(Integer animation)                    // 设置图片的动画
-        .setBgColor(Integer bgColor)                        // 设置背景颜色
-        .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
-	.setPaddingTop(Integer paddingTop)                  // 设置顶部padding
-	.setPaddingBottom(Integer paddingBottom)            // 设置底部padding
-	.setPaddingLeft(Integer paddingLeft)                // 设置左边padding
-	.setPaddingRight(Integer paddingRight)              // 设置右边padding
-        .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
-        .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
-	.setPadding(Integer padding)                        // 设置padding
-        .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
-        .setTextColor(Integer textColor)                    // 设置文字颜色
-        .setTextSize(Integer textSize)                      // 设置文字大小
-        .setGravity(Integer gravity)                        // 设置toast位于屏幕的什么位置
-	.setXOffset(Integer xOffset)                        // 设置toast在X轴上的偏移量
-	.setYOffset(Integer yOffset)                        // 设置toast在Y轴上的偏移量
-	.setDuration(Integer duration)                      // 设置toast显示时长
+	.setImage(Integer image)                            // set image
+        .setAnimation(Integer animation)                    // set image animation
+        .setBgColor(Integer bgColor)                        // set background color
+        .setCornerRadius(Integer cornerRadius)              // set background corner radius
+	.setPaddingTop(Integer paddingTop)                  // set top padding
+	.setPaddingBottom(Integer paddingBottom)            // set bottom padding
+	.setPaddingLeft(Integer paddingLeft)                // set left padding
+	.setPaddingRight(Integer paddingRight)              // set right padding
+        .setPaddingHorizontal(Integer paddingHorizontal)    // set horizontal padding
+        .setPaddingVertical(Integer paddingVertical)        // set vertical padding
+	.setPadding(Integer padding)                        // set padding
+        .setText(String text)                               // set text
+        .setTextColor(Integer textColor)                    // set text color
+        .setTextSize(Integer textSize)                      // set text size
+        .setGravity(Integer gravity)                        // set toast location in window
+	.setXOffset(Integer xOffset)                        // set the offset in X
+	.setYOffset(Integer yOffset)                        // set the offset in Y
+	.setDuration(Integer duration)                      // set duration
 	.show();
 ```
 
-## Loading Toast
-### Show Loading Toast
+### Loading Toast
+#### Show Loading Toast
 ```java
 // Loading
 DuckToast.showLoading(this);                // Image only
@@ -111,7 +111,7 @@ DuckToast.showLoading(this, "loading");     // Image and text
 
 > After `showLoading` is called, Toast will keep shown until user specifies how it will be dismissed. 
 
-### Dismiss Loading Toast
+#### Dismiss Loading Toast
 
 Two dismiss solution:
 
@@ -123,28 +123,28 @@ LesserToastBuilder.dismiss();                // Dismiss immediately
 LesserToastBuilder.dismiss(long delay);      // Dismiss with delay (ms)
 ```
 
-### Custom Loading Toast
+#### Custom Loading Toast
 
 Customize Toast:
 ```java
 LesserPandaToast.getInstance(this)
-        .setImage(Integer image)                            // 设置图片，如未设置, 则图片不显示，图片相关设置也不生效
-        .setAnimation(Integer animation)                    // 设置图片的动画
-        .setBgColor(Integer bgColor)                        // 设置背景颜色
-        .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
-	.setPaddingTop(Integer paddingTop)                  // 设置顶部padding
-	.setPaddingBottom(Integer paddingBottom)            // 设置底部padding
-	.setPaddingLeft(Integer paddingLeft)                // 设置左边padding
-	.setPaddingRight(Integer paddingRight)              // 设置右边padding
-        .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
-        .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
-	.setPadding(Integer padding)                        // 设置padding
-        .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
-        .setTextColor(Integer textColor)                    // 设置文字颜色
-        .setTextSize(Integer textSize)                      // 设置文字大小
+        .setImage(Integer image)                            // set image
+        .setAnimation(Integer animation)                    // set iamge animation
+        .setBgColor(Integer bgColor)                        // set background color
+        .setCornerRadius(Integer cornerRadius)              // set background corner radius
+	.setPaddingTop(Integer paddingTop)                  // set top padding
+	.setPaddingBottom(Integer paddingBottom)            // set bottom padding
+	.setPaddingLeft(Integer paddingLeft)                // set left padding
+	.setPaddingRight(Integer paddingRight)              // set right padding
+        .setPaddingHorizontal(Integer paddingHorizontal)    // set horizontal padding
+        .setPaddingVertical(Integer paddingVertical)        // set vertical padding
+	.setPadding(Integer padding)                        // set padding
+        .setText(String text)                               // set text
+        .setTextColor(Integer textColor)                    // set text color
+        .setTextSize(Integer textSize)                      // set text size
         .show();
         
-LesserPandaToast.dismiss(1500); // 1.5 秒后自动消失
+LesserPandaToast.dismiss(1500); 
 ```
 
 ## Contributer
