@@ -66,6 +66,8 @@ LesserPandaToast.showWarning(this);                // 只有图标，不含文�
 LesserPandaToast.showWarning(this, "warning");     // 包含图标和文字
 ```
 
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > 
+
 #### 隐藏Tip Toast
 提示性Toast是基于Android原生的Toast进行设计的，因此不需要手动进行隐藏的操作，显示时长的显示与原生Toast相同。
 
@@ -93,8 +95,6 @@ LesserToastBuilder.getInstance(this)
 	.show();
 ```
 
-<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > 
-
 ### Loading Toast
 #### 显示 Loading Toast
 
@@ -106,7 +106,7 @@ LesserPandaToast.showLoading(this, "loading");     // 包含图标和文字
 
 <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
 
-> 在用户调用 showXXXX 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
+> 在用户调用 showLoading 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
 
 ### 隐藏 Loading Toast
 
