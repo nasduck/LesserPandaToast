@@ -34,7 +34,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.nasduck:LesserPandaToast:1.0.1'
+    implementation 'com.github.nasduck:LesserPandaToast:1.0.2'
 }
 ```
 
@@ -124,7 +124,7 @@ LesserPandaToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫�
 自定义 Toast, 建议进行进一步封装简化调用:
 
 ```java
-ToastBuilder.getInstance(this)
+LesserPandaToast.getInstance(this)
         .setImage(Integer image)                            // 设置图片，如未设置, 则图片不显示，图片相关设置也不生效
         .setAnimation(Integer animation)                    // 设置图片的动画
         .setBgColor(Integer bgColor)                        // 设置背景颜色
@@ -141,7 +141,7 @@ ToastBuilder.getInstance(this)
         .setTextSize(Integer textSize)                      // 设置文字大小
         .show();
         
-ToastBuilder.dismiss(1500); // 1.5 秒后自动消失
+LesserPandaToast.dismiss(1500); // 1.5 秒后自动消失
 ```
 
 ## 贡献
