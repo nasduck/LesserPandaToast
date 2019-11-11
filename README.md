@@ -13,9 +13,8 @@ you will find they are used together. Please enjoy them :D
 
 * [Setup](#setup)
 * [Usage](#usage)
-    * [Show Toast](#show-loadingToast)
-    * [Dismiss Toast](#dismiss-loadingToast)
-    * [Custom Toast](#custom-loadingToast)
+    * [Tip Toast](#Tip-Toast)
+    * [Loading Toast](#Loading-Toast)
 * [Contributer](#contributer)
 * [License](#license)
 
@@ -39,48 +38,80 @@ Adding the following dependency to app `build.gradle` file:
 
 ```
 dependencies {
-    implementation 'com.github.nasduck:LesserPandaToast:1.0.1'
+    implementation 'com.github.nasduck:LesserPandaToast:1.0.2'
 }
 ```
 
 ## Usage
+LesserPandaToast includes two types of Toast：Tip Toast and Loading Toast
 
-5 types of Toast are provided by default:
+### Tip Toast
+4 types of Toast are provided by default:
 
 1. Text only
 2. Success
 3. Failure
 4. Warning
-5. Loading
 
-### Show Toast
-
+#### Show Tip Toast
 ```java
 // Text only
-DuckToast.show(this, "Toast Default");
+LesserToastBuilder.show(this, "Toast Default");
 
 // Success
-DuckToast.showSuccess(this);                // Image only
-DuckToast.showSuccess(this, "success");     // Image and text
+LesserToastBuilder.showSuccess(this);                // Image only
+LesserToastBuilder.showSuccess(this, "success");     // Image and text
 
 // Failure
-DuckToast.showFailure(this);                // Image only
-DuckToast.showFailure(this, "failure");     // Image and text
+LesserToastBuilder.showFailure(this);                // Image only
+LesserToastBuilder.showFailure(this, "failure");     // Image and text
 
 // Warning
-DuckToast.showWarning(this);                // Image only
-DuckToast.showWarning(this, "warning");     // Image and text
+LesserToastBuilder.showWarning(this);                // Image only
+LesserToastBuilder.showWarning(this, "warning");     // Image and text
+```
 
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" >
+
+#### Dismiss Tip Toast
+Tip Toast is designed based on Android native Toast, so there is no need to hide manually and the display time is the same as that of native Toast.
+
+#### Custom Tip Toast
+```java
+LesserToastBuilder.getInstance(this)
+	.setImage(Integer image)                            // set image
+        .setAnimation(Integer animation)                    // set image animation
+        .setBgColor(Integer bgColor)                        // set background color
+        .setCornerRadius(Integer cornerRadius)              // set background corner radius
+	.setPaddingTop(Integer paddingTop)                  // set top padding
+	.setPaddingBottom(Integer paddingBottom)            // set bottom padding
+	.setPaddingLeft(Integer paddingLeft)                // set left padding
+	.setPaddingRight(Integer paddingRight)              // set right padding
+        .setPaddingHorizontal(Integer paddingHorizontal)    // set horizontal padding
+        .setPaddingVertical(Integer paddingVertical)        // set vertical padding
+	.setPadding(Integer padding)                        // set padding
+        .setText(String text)                               // set text
+        .setTextColor(Integer textColor)                    // set text color
+        .setTextSize(Integer textSize)                      // set text size
+        .setGravity(Integer gravity)                        // set toast location in window
+	.setXOffset(Integer xOffset)                        // set the offset in X
+	.setYOffset(Integer yOffset)                        // set the offset in Y
+	.setDuration(Integer duration)                      // set duration
+	.show();
+```
+
+### Loading Toast
+#### Show Loading Toast
+```java
 // Loading
 DuckToast.showLoading(this);                // Image only
 DuckToast.showLoading(this, "loading");     // Image and text
 ```
+ <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
 
-<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
+> After `showLoading` is called, Toast will keep shown until user specifies how it will be dismissed. 
 
-> After `showXXXX` is called, Toast will keep shown until user specifies how it will be dismissed. 
-
-### Dismiss Toast
+#### Dismiss Loading Toast
 
 Two dismiss solution:
 
@@ -88,33 +119,32 @@ Two dismiss solution:
 2. Dismiss with delay
 
 ```java
-DuckToast.dismiss();                // Dismiss immediately
-DuckToast.dismiss(long delay);      // Dismiss with delay (ms)
+LesserToastBuilder.dismiss();                // Dismiss immediately
+LesserToastBuilder.dismiss(long delay);      // Dismiss with delay (ms)
 ```
 
-### Custom Toast
+#### Custom Loading Toast
 
 Customize Toast:
-
 ```java
-ToastBuilder.getInstance(this)
-        .setImage(Integer image)                            // Image. If not set, other related image settings won't be enabled
-        .setAnimation(Integer animation)                    // Image Animation
-        .setBgColor(Integer bgColor)                        // Background color. #B2000000 by default
-        .setCornerRadius(Integer cornerRadius)              // Background corner radius. 6dp by default
-    	.setPaddingTop(Integer paddingTop)		            // 12dp by default
-    	.setPaddingBottom(Integer paddingBottom)	        // 12dp by default
-    	.setPaddingLeft(Integer paddingLeft)		        // 24dp by default
-    	.setPaddingRight(Integer paddingRight)		        // 24dp by default
-        .setPaddingHorizontal(Integer paddingHorizontal)    
-        .setPaddingVertical(Integer paddingVertical)
-    	.setPadding(Integer padding)
-        .setText(String text)                               // Text. If not set, other related text settings won't be enabled
-        .setTextColor(Integer textColor)                    // white by default
-        .setTextSize(Integer textSize)                      // 14sp by default
+LesserPandaToast.getInstance(this)
+        .setImage(Integer image)                            // set image
+        .setAnimation(Integer animation)                    // set iamge animation
+        .setBgColor(Integer bgColor)                        // set background color
+        .setCornerRadius(Integer cornerRadius)              // set background corner radius
+	.setPaddingTop(Integer paddingTop)                  // set top padding
+	.setPaddingBottom(Integer paddingBottom)            // set bottom padding
+	.setPaddingLeft(Integer paddingLeft)                // set left padding
+	.setPaddingRight(Integer paddingRight)              // set right padding
+        .setPaddingHorizontal(Integer paddingHorizontal)    // set horizontal padding
+        .setPaddingVertical(Integer paddingVertical)        // set vertical padding
+	.setPadding(Integer padding)                        // set padding
+        .setText(String text)                               // set text
+        .setTextColor(Integer textColor)                    // set text color
+        .setTextSize(Integer textSize)                      // set text size
         .show();
         
-ToastBuilder.dismiss(1500); // dismiss in 1.5s
+LesserPandaToast.dismiss(1500); 
 ```
 
 ## Contributer
