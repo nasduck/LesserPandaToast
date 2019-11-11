@@ -10,9 +10,8 @@ LesserPandaToast 提供最简单的方法来调用各类简单的 progressHud �
 
 * [依赖](#依赖)
 * [使用方式](#使用方式)
-    * [显示 Toast](#显示-loadingToast)
-    * [隐藏 Toast](#隐藏-loadingToast)
-    * [自定义 Toast](#自定义-loadingToast)
+    * [Tip Toast](#Tip-Toast)
+    * [Loading Toast](#Loading-Toast)
 * [贡献](#贡献)
 * [License](#license)
 
@@ -40,44 +39,76 @@ dependencies {
 ```
 
 ## 使用方式
+LesserPandaToast包含了两类Toast：Tip Toast和Loading Toast
 
-默认提供了 5 种 Toast 类型:
-
+### Tip Toast
+默认提供了 4 种 提示性Toast 类型：
 1. 纯文字
 2. 成功
 3. 失败
 4. 警告
-5. 正在加载
 
-
-### 显示 Toast
-
+#### 显示Tip Toast
 ```java
 // 纯文字
-DuckToast.show(this, "Toast Default");
+LesserPandaToast.show(this, "Toast Default");
 
 // 成功
-DuckToast.showSuccess(this);                // 只有图标，不含文字
-DuckToast.showSuccess(this, "success");     // 包含图标和文字
+LesserPandaToast.showSuccess(this);                // 只有图标，不含文字
+LesserPandaToast.showSuccess(this, "success");     // 包含图标和文字
 
 // 失败
-DuckToast.showFailure(this);                // 只有图标，不含文字
-DuckToast.showFailure(this, "failure");     // 包含图标和文字
+LesserPandaToast.showFailure(this);                // 只有图标，不含文字
+LesserPandaToast.showFailure(this, "failure");     // 包含图标和文字
 
 // 警告
-DuckToast.showWarning(this);                // 只有图标，不含文字
-DuckToast.showWarning(this, "warning");     // 包含图标和文字
-
-// 正在加载
-DuckToast.showLoading(this);                // 只有图标，不含文字
-DuckToast.showLoading(this, "loading");     // 包含图标和文字
+LesserPandaToast.showWarning(this);                // 只有图标，不含文字
+LesserPandaToast.showWarning(this, "warning");     // 包含图标和文字
 ```
 
-<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
+#### 隐藏Tip Toast
+提示性Toast是基于Android原生的Toast进行设计的，因此不需要手动进行隐藏的操作，显示时长的显示与原生Toast相同。
+
+#### 自定义Tip Toast
+```java
+LesserToastBuilder.getInstance(this)
+	.setImage(Integer image)                            // 设置图片，如未设置, 则图片不显示，图片相关设置也不生效
+        .setAnimation(Integer animation)                    // 设置图片的动画
+        .setBgColor(Integer bgColor)                        // 设置背景颜色
+        .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
+	.setPaddingTop(Integer paddingTop)                  // 设置顶部padding
+	.setPaddingBottom(Integer paddingBottom)            // 设置底部padding
+	.setPaddingLeft(Integer paddingLeft)                // 设置左边padding
+	.setPaddingRight(Integer paddingRight)              // 设置右边padding
+        .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
+        .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
+	.setPadding(Integer padding)                        // 设置padding
+        .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
+        .setTextColor(Integer textColor)                    // 设置文字颜色
+        .setTextSize(Integer textSize)                      // 设置文字大小
+        .setGravity(Integer gravity)                        // 设置toast位于屏幕的什么位置
+	.setXOffset(Integer xOffset)                        // 设置toast在X轴上的偏移量
+	.setYOffset(Integer yOffset)                        // 设置toast在Y轴上的偏移量
+	.setDuration(Integer duration)                      // 设置toast显示时长
+	.show();
+```
+
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/text%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/success%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/failure%20toast.png?raw=true" height="300" > <img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/warning%20toast.png?raw=true" height="300" > 
+
+### Loading Toast
+#### 显示 Loading Toast
+
+```java
+// 正在加载
+LesserPandaToast.showLoading(this);                // 只有图标，不含文字
+LesserPandaToast.showLoading(this, "loading");     // 包含图标和文字
+```
+
+<img src="https://github.com/nasduck/LesserPandaToast/blob/develop/art/loading%20toast.gif?raw=true" height="300" > 
 
 > 在用户调用 showXXXX 方法后, Toast 将一直保持显示状态直到用户指定以何种方式消失
 
-### 隐藏 Toast
+### 隐藏 Loading Toast
 
 两种消失方式:
 
@@ -85,12 +116,11 @@ DuckToast.showLoading(this, "loading");     // 包含图标和文字
 2. 延迟一段时间后消失
 
 ```java
-DuckToast.dismiss();                // 立即消失
-DuckToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫秒)
+LesserPandaToast.dismiss();                // 立即消失
+LesserPandaToast.dismiss(long delay);      // 延迟 delay 时间后消失(毫秒)
 ```
 
-### 自定义 Toast
-
+### 自定义 Loading Toast
 自定义 Toast, 建议进行进一步封装简化调用:
 
 ```java
@@ -99,13 +129,13 @@ ToastBuilder.getInstance(this)
         .setAnimation(Integer animation)                    // 设置图片的动画
         .setBgColor(Integer bgColor)                        // 设置背景颜色
         .setCornerRadius(Integer cornerRadius)              // 设置背景圆角
-	      .setPaddingTop(Integer paddingTop)		              // 设置顶部padding
-	      .setPaddingBottom(Integer paddingBottom)	          // 设置底部padding
-	      .setPaddingLeft(Integer paddingLeft)		            // 设置左边padding
-	      .setPaddingRight(Integer paddingRight)		          // 设置右边padding
+	.setPaddingTop(Integer paddingTop)                  // 设置顶部padding
+	.setPaddingBottom(Integer paddingBottom)            // 设置底部padding
+	.setPaddingLeft(Integer paddingLeft)                // 设置左边padding
+	.setPaddingRight(Integer paddingRight)              // 设置右边padding
         .setPaddingHorizontal(Integer paddingHorizontal)    // 设置水平padding
         .setPaddingVertical(Integer paddingVertical)        // 设置竖直padding
-	      .setPadding(Integer padding)			                  // 设置padding
+	.setPadding(Integer padding)                        // 设置padding
         .setText(String text)                               // 设置文字，如未设置，则文字不显示，文字相关设置不生效
         .setTextColor(Integer textColor)                    // 设置文字颜色
         .setTextSize(Integer textSize)                      // 设置文字大小
