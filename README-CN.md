@@ -34,7 +34,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.nasduck:LesserPandaToast:1.0.2'
+    implementation 'com.github.nasduck:LesserPandaToast:2.0.1'
 }
 ```
 
