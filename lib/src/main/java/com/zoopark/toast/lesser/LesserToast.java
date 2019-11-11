@@ -2,6 +2,7 @@ package com.zoopark.toast.lesser;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,11 +59,12 @@ public class LesserToast {
         mTopView.setLayoutParams(layoutParams);
         mTopView.addView(view);
 
-        mToast = new Toast(mContext);
-        mToast.setView(mTopView);
     }
 
     public void showToast(LesserToastConfig config) {
+        mToast = new Toast(mContext);
+        mToast.setView(mTopView);
+
         if (config == null) {
             config = LesserToastConfig.newInstance(ToastStyle.DARK);
         }
